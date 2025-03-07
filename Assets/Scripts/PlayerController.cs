@@ -1,41 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class PlayerController : MonoBehaviour
 {
+    public float moveSpeed = 0f;
+    public Animator animator;
 
-    public Animator anim;
-    private Rigidbody rb;
-    public LayerMask layerMask;
-    public float Dis = 5;
-    public GameObject Groundcheck;
-
-    // Start is called before the first frame update
     void Start()
     {
-        this.rb = GetComponent<Rigidbody>();
-    }
-
-    private void FixedUpdate()
-    {
-        Move();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 
-
-    private void Move()
+    void Update()
     {
-        float verticalAxis = Input.GetAxis("Vertical");
-        float horizontalAxis = Input.GetAxis("Horizontal");
+        // Movement input
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 movement = this.transform.forward * verticalAxis + this.transform.right * horizontalAxis;
-        movement.Normalize();
+        // Calculate movement vector
+        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput).normalized;
 
-        this.transform.position += movement * 0.08f;
+        // Update isMoving parameter based on movement speed
+        bool isMoving = movement.magnitude > 0;
 
-        this.anim.SetFloat("vertical", verticalAxis);
-        this.anim.SetFloat("horizontal", horizontalAxis);
+        // Update animation parameters
+        animator.SetBool("IsMoving", isMoving);
+        animator.SetFloat("Horizontal", horizontalInput);
+        animator.SetFloat("Vertical", verticalInput);
+
+        // Move the character
+        transform.Translate(movement * moveSpeed * Time.deltaTime);
     }
 }
