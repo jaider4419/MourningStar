@@ -21,8 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_StylizedLava
-  m_Shader: {fileID: -6465566751694194690, guid: 8eef88ae773ef5f4dbe4da56da89303b,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 8eef88ae773ef5f4dbe4da56da89303b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -158,10 +157,10 @@ Material:
     - _HorizonColor: {r: 6.950159, g: 4.2356625, b: 6.4411907, a: 0}
     - _IntersectionFoamColor: {r: 3.9999995, g: 0.11468783, b: 0, a: 1}
     - _PositionRipples: {r: 0, g: 0, b: 0, a: 0}
-    - _SecondaryFoamColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShallowColor: {r: 4.9457116, g: 0.54648745, b: 0, a: 1}
+    - _SecondaryFoamColor: {r: 0.042986836, g: 0.2202397, b: 0.3962264, a: 1}
+    - _ShallowColor: {r: 0.9769798, g: 2.0469446, b: 2.1802075, a: 1}
     - _SpecularColor: {r: 0, g: 0, b: 0, a: 0.31764707}
-    - _SurfaceFoamColor: {r: 9.465039, g: 0.5980594, b: 0, a: 1}
+    - _SurfaceFoamColor: {r: 12.636572, g: 12.636572, b: 12.636572, a: 1}
     - _TopColor: {r: 0, g: 0.17848217, b: 0.5622641, a: 0.44705883}
     - _UV: {r: 0, g: 0, b: 0, a: 0}
     - _UVRipples: {r: 0, g: 0, b: 0, a: 0}
