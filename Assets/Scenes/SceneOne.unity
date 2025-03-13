@@ -3776,8 +3776,8 @@ Camera:
   near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 2.84
+  orthographic: 1
+  orthographic size: 3
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -5175,45 +5175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d63d49c56ef64a4e8eb6dc3d2c39eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressed:
-    m_Name: Pressed
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 2c5c837d-3761-4824-9d53-ff7fabdca9a6
-    m_Processors: 
-    m_Interactions: Press
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: f7d61578-fe84-48d4-8314-fc9cb3821afe
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Pressed
-      m_Flags: 0
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: 3f80c7b7-2013-4311-8656-63b7b41d6e85
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: e49bd748-7c3b-464c-9aed-717e60e8a4ec
-      m_Path: <Mouse>/delta
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Axis
-      m_Flags: 0
-    m_Flags: 0
-  cam: {fileID: 0}
-  speed: 1887
-  inverted: 0
-  rotation: {x: 0, y: 0}
-  rotateAllowed: 0
 --- !u!1 &919132148763274284
 GameObject:
   m_ObjectHideFlags: 0
@@ -10305,45 +10266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d63d49c56ef64a4e8eb6dc3d2c39eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressed:
-    m_Name: Pressed
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 2c5c837d-3761-4824-9d53-ff7fabdca9a6
-    m_Processors: 
-    m_Interactions: Press
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: f7d61578-fe84-48d4-8314-fc9cb3821afe
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Pressed
-      m_Flags: 0
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: 3f80c7b7-2013-4311-8656-63b7b41d6e85
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: e49bd748-7c3b-464c-9aed-717e60e8a4ec
-      m_Path: <Mouse>/delta
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Axis
-      m_Flags: 0
-    m_Flags: 0
-  cam: {fileID: 0}
-  speed: 1887
-  inverted: 0
-  rotation: {x: 0, y: 0}
-  rotateAllowed: 0
 --- !u!1 &8879367956174767762
 GameObject:
   m_ObjectHideFlags: 0
