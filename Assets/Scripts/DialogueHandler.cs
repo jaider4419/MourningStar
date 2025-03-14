@@ -19,7 +19,7 @@ public class DialogueHandler : MonoBehaviour
 
     IEnumerator Dialogue()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(2);
         Dialogues[0].SetActive(true);
         Debug.Log("Its active");
 
