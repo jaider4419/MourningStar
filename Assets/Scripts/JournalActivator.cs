@@ -15,13 +15,15 @@ public class JournalActivator : MonoBehaviour
     {
         {
 
-                {
-                    JournalChange.SetActive(true);
-                    Book.SetActive(false);
-                    AcquiredJournal.Play();
-                }
+            {
+                JournalChange.SetActive(true);
+                Book.SetActive(false);
+                AcquiredJournal.Play();
             }
         }
     }
+
+
+}
 
 
