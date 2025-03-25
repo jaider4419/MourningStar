@@ -45,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _IntersectionFoamTexture:
-        m_Texture: {fileID: 2800000, guid: 737be9e0c14ab9b44a6706651e51a4ed, type: 3}
+        m_Texture: {fileID: 2800000, guid: 605cc8c8b9e7eb949a51544aeb4265bb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTexture:
@@ -65,7 +65,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondaryFoamTex:
-        m_Texture: {fileID: 2800000, guid: 737be9e0c14ab9b44a6706651e51a4ed, type: 3}
+        m_Texture: {fileID: 2800000, guid: 605cc8c8b9e7eb949a51544aeb4265bb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Skybox:
@@ -73,7 +73,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SurfaceFoamTexture:
-        m_Texture: {fileID: 2800000, guid: 737be9e0c14ab9b44a6706651e51a4ed, type: 3}
+        m_Texture: {fileID: 2800000, guid: 605cc8c8b9e7eb949a51544aeb4265bb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -136,27 +136,27 @@ Material:
     - _WaterMetallic: 0.42
     - _WaterSmoothness: 0.29
     - _WaveLength: 1.82
-    - _WaveSpeed: 0
-    - _WaveSteepness: 0
+    - _WaveSpeed: 0.14
+    - _WaveSteepness: 0.94
     - _WaveStepness: 0.35
     m_Colors:
     - _BaseColor: {r: 0, g: 0.1989687, b: 1.110646, a: 1}
-    - _CaveColor: {r: 0, g: 0.0014197151, b: 0.4716981, a: 0}
+    - _CaveColor: {r: 0.37909767, g: 0.47058824, b: 0, a: 0}
     - _CaveOffset: {r: -0.45, g: 0, b: 0, a: 0}
     - _CaveScale: {r: 0.01, g: 0.01, b: 0, a: 0}
     - _CaveSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
-    - _DeepColor: {r: 0, g: 0, b: 0, a: 0.40392157}
+    - _DeepColor: {r: 0.009467339, g: 0.06246305, b: 0.08726415, a: 1}
     - _FoamUVsOffset: {r: 1, g: 1, b: 0, a: 0}
     - _FresnelColor: {r: 2.670157, g: 2.670157, b: 2.670157, a: 0}
-    - _HorizonColor: {r: 7.3772106, g: 3.6607668, b: 6.6577153, a: 1}
-    - _IntersectionFoamColor: {r: 1.1486984, g: 1.1486984, b: 1.1486984, a: 1}
+    - _HorizonColor: {r: 0.009467339, g: 0.06246305, b: 0.08726415, a: 1}
+    - _IntersectionFoamColor: {r: 0.009467339, g: 0.06246305, b: 0.08726415, a: 1}
     - _PositionRipples: {r: 0, g: 0, b: 0, a: 0}
-    - _SecondaryFoamColor: {r: 0.17370345, g: 1.1849058, b: 0.6515868, a: 0.011764706}
-    - _ShallowColor: {r: 0.48584908, g: 1, b: 0.9643552, a: 1}
-    - _SpecularColor: {r: 1, g: 1, b: 1, a: 0.2627451}
-    - _SurfaceFoamColor: {r: 0.21495599, g: 1.2830188, b: 0.7506971, a: 0.0627451}
+    - _SecondaryFoamColor: {r: 0.009467339, g: 0.06246305, b: 0.08726415, a: 1}
+    - _ShallowColor: {r: 0.009467339, g: 0.06246305, b: 0.08726415, a: 1}
+    - _SpecularColor: {r: 0.009467339, g: 0.06246305, b: 0.08726415, a: 1}
+    - _SurfaceFoamColor: {r: 0.009467339, g: 0.06246305, b: 0.08726415, a: 1}
     - _TopColor: {r: 0, g: 0.17848217, b: 0.5622641, a: 0.44705883}
     - _UV: {r: 0, g: 0, b: 0, a: 0}
     - _UVRipples: {r: 0, g: 0, b: 0, a: 0}
-    - _WaveDirections: {r: 1, g: 1, b: 1, a: 1}
+    - _WaveDirections: {r: 2.02, g: 6.3, b: 0.2, a: 1}
   m_BuildTextureStacks: []
