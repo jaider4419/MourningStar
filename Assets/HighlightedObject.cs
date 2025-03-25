@@ -21,6 +21,7 @@ public class Highlight : MonoBehaviour
     private void OnMouseEnter()
     {
         HighLightObject.SetActive(true);
+        Debug.Log("Mouse Entered");
     }
 
     private void OnMouseExit()
