@@ -3361,7 +3361,7 @@ GameObject:
   - component: {fileID: 641128537}
   - component: {fileID: 641128536}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Exit Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3900,6 +3900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 710555794}
   - component: {fileID: 710555793}
+  - component: {fileID: 710555795}
   m_Layer: 0
   m_Name: Code Haver
   m_TagString: Untagged
@@ -3937,6 +3938,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &710555795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710555792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b157d39f0de88b34789882cde41d078d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: Cliff
 --- !u!1001 &711708691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5180,7 +5194,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Yes
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6509,7 +6525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 36}
+  m_AnchoredPosition: {x: 5.9, y: 36}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1404769197
@@ -6532,7 +6548,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Would you like to exit?
+  m_text: 'Would you like to leave?
 
 '
   m_isRightToLeft: 0
@@ -6597,7 +6613,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -37.373383, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8578,7 +8594,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'No '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9666,7 +9682,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2029105446}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 641128534}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2029105446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9921,7 +9949,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2094273533}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 710555795}
+        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+        m_MethodName: loadNextScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2094273533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10930,6 +10970,7 @@ GameObject:
   - component: {fileID: 5907162998784384267}
   - component: {fileID: 9043264697858530920}
   - component: {fileID: 9043264697858530919}
+  - component: {fileID: 9043264697858530921}
   m_Layer: 0
   m_Name: pCube5
   m_TagString: Selectable
@@ -13468,18 +13509,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!65 &9043264697858530920
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13501,6 +13530,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.010000004, y: 0.009999999, z: 0.010000004}
   m_Center: {x: -0.0000000033760443, y: 9.313226e-10, z: 0.00000017881393}
+--- !u!114 &9043264697858530921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988356933324009319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42bbb66c1e8c6c2458d128999d7255cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiPanel: {fileID: 641128534}
 --- !u!1 &9057976117584263161
 GameObject:
   m_ObjectHideFlags: 0

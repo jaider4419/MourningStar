@@ -19,7 +19,7 @@ public class Click3DObject : MonoBehaviour
                     TriggerUIPanel();
                 }
             }
-        }
+        } 
     }
 
     void TriggerUIPanel()
