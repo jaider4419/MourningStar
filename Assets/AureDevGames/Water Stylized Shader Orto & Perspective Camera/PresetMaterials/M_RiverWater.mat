@@ -25,6 +25,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _A_SHORT_HIKE_MODE
   - _PERSPECTIVE
   - _REFLECTIONS
   - _WORLD_SPACE_UV
@@ -89,7 +90,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _A_SHORT_HIKE_MODE: 0
+    - _A_SHORT_HIKE_MODE: 1
     - _CaveBlend: 0
     - _CaveDistortion: 0
     - _DepthCompareDistance: 0.1
@@ -119,7 +120,7 @@ Material:
     - _ReflectionBlend: 0.67
     - _ReflectionDistortion: 0.38
     - _RefractionScale: 10
-    - _RefractionSpeed: 0.02
+    - _RefractionSpeed: -28.33
     - _RefractionStrength: 0.005
     - _RippleStrength: 83.62
     - _SecondaryFoamBlend: 0.06
@@ -135,8 +136,8 @@ Material:
     - _WaterMetallic: 0.42
     - _WaterSmoothness: 0.29
     - _WaveLength: 1.82
-    - _WaveSpeed: -2.67
-    - _WaveSteepness: 0.94
+    - _WaveSpeed: 6.11
+    - _WaveSteepness: -0.04
     - _WaveStepness: 0.35
     m_Colors:
     - _BaseColor: {r: 0, g: 0.1989687, b: 1.110646, a: 1}
