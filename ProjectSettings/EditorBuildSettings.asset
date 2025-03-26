@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneOne.unity
     guid: ef607afbd42a4a94f8d200fd31653ada
+  - enabled: 1
+    path: Assets/Scenes/Cliff.unity
+    guid: 9f370252a61b276448ff90a402ef6d93
   m_configObjects: {}
