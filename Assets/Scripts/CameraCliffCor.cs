@@ -6,6 +6,7 @@ public class CameraCliffCor : MonoBehaviour
 {
     public GameObject AnimCam;
     public GameObject MainCam;
+    public GameObject KeepUi;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class CameraCliffCor : MonoBehaviour
         AnimCam.SetActive(false);
         MainCam.SetActive(true);
         Debug.Log("Transition happened.");
+        KeepUi.SetActive(true);
 
     }
 

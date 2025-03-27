@@ -14,6 +14,14 @@ public class VideoController : MonoBehaviour
         videoPlayer.Play();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            SceneManager.LoadScene(nextSceneName);  
+        }
+    }
+
     void EndReached(VideoPlayer vp)
     {
         // Load the next scene
