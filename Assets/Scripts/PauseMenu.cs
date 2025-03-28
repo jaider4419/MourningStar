@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenuUI; // Reference to the pause menu UI panel
-    public string mainMenuSceneName = "MainMenu"; // Name of the main menu scene
+    public GameObject pauseMenuUI; 
+    public string mainMenuSceneName = "MainMenu"; 
     public AudioSource bgm;
     private bool isPaused = false;
     private string nextSceneName = "FirstScene";
@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-        Cursor.visible = false; 
+        Cursor.visible = true; 
         bgm.Play();
     }
 
