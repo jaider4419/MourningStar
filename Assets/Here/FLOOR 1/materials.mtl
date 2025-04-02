@@ -1,0 +1,26 @@
+# Made in Blockbench 4.12.4
+newmtl m_68dee3a3-46db-6016-1aff-3ad97fa5eebf
+map_Kd mirror.png
+newmtl m_8b2a3677-87e0-e7a7-6d41-dfdc4c6c92c3
+map_Kd rug.png
+newmtl m_c95fa7fd-9278-8a86-c8f8-00cc08e1ecad
+map_Kd stairs.png
+newmtl m_745f09a9-c83a-0ae5-cc9b-ce8e5f9c2681
+map_Kd chest.png
+newmtl m_118507e4-8d77-6c69-c7c8-8d8109bcb65b
+map_Kd CRATE.png
+newmtl m_fca34d4f-a63c-0cdb-b580-43773a8b95a2
+map_Kd lamp.png
+newmtl m_f8beae1b-b1b5-4721-4124-d513fd73eb72
+map_Kd window.png
+newmtl m_b1e3bc70-c013-7363-a0ac-9c9c03048cca
+map_Kd FloorANDWalls.png
+newmtl m_bdd21399-1e0c-36e2-d7c8-08734122c147
+map_Kd sofa.png
+newmtl m_73a9631a-e55b-7d01-d715-6467c1f681fc
+map_Kd bedroomdoor.png
+newmtl m_08bbcec4-cb2c-2f99-76de-cbf6ff1bec0f
+map_Kd ligthhouseDOOR.png
+newmtl m_347012d6-b08c-4bd4-2430-a3eef1a7885c
+map_Kd STAIRS.png
+newmtl none
