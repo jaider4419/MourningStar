@@ -89,7 +89,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HorizonLineColor: {r: 0.27362943, g: 0.4056604, b: 0.38385713, a: 0}
+    - _HorizonLineColor: {r: 0, g: 0, b: 0, a: 0}
     - _SkyGradientBottom: {r: 0.03337486, g: 0.079098426, b: 0.09433961, a: 0}
     - _SkyGradientTop: {r: 0.027897932, g: 0.049892798, b: 0.08823531, a: 0}
     - _SunDiscColor: {r: 1, g: 1, b: 1, a: 1}
