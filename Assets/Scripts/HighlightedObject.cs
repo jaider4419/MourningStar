@@ -5,6 +5,7 @@ using UnityEngine;
 public class Highlight : MonoBehaviour
 {
     public GameObject HighLightObject;
+    public GameObject NormalObject;
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +28,6 @@ public class Highlight : MonoBehaviour
     private void OnMouseExit()
     {
         HighLightObject.SetActive(false);
+
     }
 }

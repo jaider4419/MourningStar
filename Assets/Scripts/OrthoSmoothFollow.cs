@@ -8,7 +8,7 @@ public class OrthoSmoothFollow : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 goalPos = target.position + offset;
         transform.position = Vector3.SmoothDamp(transform.position, goalPos, ref velocity, smoothTime);

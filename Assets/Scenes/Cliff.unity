@@ -2668,6 +2668,7 @@ GameObject:
   - component: {fileID: 301873976}
   - component: {fileID: 301873975}
   - component: {fileID: 301873977}
+  - component: {fileID: 301873978}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -2755,12 +2756,25 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.0000002, y: 1, z: 1.0000002}
   m_Center: {x: 0, y: 0, z: 0.000061035156}
+--- !u!114 &301873978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301873972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65576e13e7d4ab04da85d80daf39f348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: Lhfloor
 --- !u!1 &317575645
 GameObject:
   m_ObjectHideFlags: 0
