@@ -21,9 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneOneNight.unity
     guid: 3d95486fb9cc2ea488cd67db1a977caa
   - enabled: 1
+    path: Assets/Scenes/Lhfloor.unity
+    guid: 6ed72e8a2ebfb5d4c8d62afd87707c23
+  - enabled: 1
     path: Assets/Scenes/Lhfloor2.unity
     guid: 6ca0597102ca31944a78414fa7227b3f
   - enabled: 1
-    path: Assets/Scenes/Lhfloor.unity
-    guid: 6ed72e8a2ebfb5d4c8d62afd87707c23
+    path: Assets/Scenes/Night.unity
+    guid: 10c7079c732e374438e6dfee942d7929
   m_configObjects: {}
