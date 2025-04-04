@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
-using UnityEditor;
 using UnityEditorInternal;
 
 namespace kTools.Mirrors.Editor
 {
-    using Editor = UnityEditor.Editor;
 
     [CustomEditor(typeof(Mirror)), CanEditMultipleObjects]
     sealed class MirrorEditor : Editor
