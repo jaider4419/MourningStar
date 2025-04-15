@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Night.unity
     guid: 10c7079c732e374438e6dfee942d7929
+  - enabled: 1
+    path: Assets/Scenes/ShackNight1.unity
+    guid: 5844645052780e34692b47c64039b91b
+  - enabled: 1
+    path: Assets/Scenes/ShackDay2.unity
+    guid: f567ac8bda259424baf2cbfc84235875
   m_configObjects: {}
