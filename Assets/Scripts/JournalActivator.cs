@@ -10,6 +10,8 @@ public class JournalActivator : MonoBehaviour
 
     public GameObject Book;
     public AudioSource AcquiredJournal;
+    public GameObject HideUi;
+    public GameObject AnotherActive;
 
     public void Activate()
     {
@@ -19,6 +21,8 @@ public class JournalActivator : MonoBehaviour
                 JournalChange.SetActive(true);
                 Book.SetActive(false);
                 AcquiredJournal.Play();
+                HideUi.SetActive(false);
+                AnotherActive.SetActive(true);
             }
         }
     }
