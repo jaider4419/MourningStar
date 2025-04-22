@@ -4,13 +4,11 @@ public class MonsterController : MonoBehaviour
 {
     public enum WindowPosition { Left, Right, Front, Ocean }
 
-    [Header("Window Positions")]
     public Transform leftWindowPos;
     public Transform rightWindowPos;
     public Transform frontWindowPos;
     public Transform oceanPos;
 
-    [Header("Timing")]
     public float minTimeAtWindow = 3f;
     public float maxTimeAtWindow = 7f;
     public float lightReactionTime = 2f;
@@ -69,17 +67,15 @@ public class MonsterController : MonoBehaviour
 
     private void MoveToRandomWindow()
     {
-        // Randomly select a window (excluding current position and ocean)
         WindowPosition newWindow;
         do
         {
-            newWindow = (WindowPosition)Random.Range(0, 3); // 0-2 for Left, Right, Front
+            newWindow = (WindowPosition)Random.Range(0, 3); 
         } while (newWindow == currentWindow);
 
         currentWindow = newWindow;
         windowTimer = Random.Range(minTimeAtWindow, maxTimeAtWindow);
 
-        // Move to the selected window
         switch (currentWindow)
         {
             case WindowPosition.Left:

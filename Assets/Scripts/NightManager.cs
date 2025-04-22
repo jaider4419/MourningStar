@@ -1,24 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class NightManager : MonoBehaviour
 {
     public static NightManager Instance;
 
-    [Header("UI Elements")]
-    public Text energyText;
-    public Text timerText;
+    public TMP_Text energyText;
+    private Text timerText;
     public GameObject winPanel;
     public GameObject losePanel;
 
-    [Header("Game Settings")]
     public float maxEnergy = 100f;
-    public float energyDrainRate = 2f; // per second when light is on
-    public float gameDuration = 120f; // 2 minutes
+    public float chunkSize = 20f; 
+    public float chunkTime = 10f;
+    public float gameDuration = 120f; 
 
     private float currentEnergy;
     private float gameTimer;
+    private float drainTimer;
     private bool gameOver;
 
     private void Awake()
@@ -37,7 +38,7 @@ public class NightManager : MonoBehaviour
     {
         currentEnergy = maxEnergy;
         gameTimer = gameDuration;
-        UpdateUI();
+        UpdateEnergyUI(); 
     }
 
     private void Update()
@@ -51,28 +52,33 @@ public class NightManager : MonoBehaviour
             return;
         }
 
-        UpdateUI();
+        int minutes = Mathf.FloorToInt(gameTimer / 60);
+        int seconds = Mathf.FloorToInt(gameTimer % 60);
     }
 
-    public void DrainEnergy()
+    public void DrainEnergyOverTime()
     {
-        if (gameOver) return;
+        drainTimer += Time.deltaTime;
 
-        currentEnergy -= energyDrainRate * Time.deltaTime;
-        if (currentEnergy <= 0)
+        if (drainTimer >= chunkTime)
         {
-            currentEnergy = 0;
-            LoseGame();
+            currentEnergy -= chunkSize;
+            drainTimer = 0f; 
+
+            UpdateEnergyUI();
+
+            if (currentEnergy <= 0)
+            {
+                currentEnergy = 0;
+                LoseGame();
+            }
         }
     }
 
-    private void UpdateUI()
+    private void UpdateEnergyUI()
     {
-        energyText.text = $"Energy: {Mathf.CeilToInt(currentEnergy)}%";
-
-        int minutes = Mathf.FloorToInt(gameTimer / 60);
-        int seconds = Mathf.FloorToInt(gameTimer % 60);
-        timerText.text = $"{minutes:00}:{seconds:00}";
+        int displayEnergy = Mathf.CeilToInt(currentEnergy / chunkSize) * (int)chunkSize;
+        energyText.text = $"Power: {displayEnergy}%";
     }
 
     private void WinGame()

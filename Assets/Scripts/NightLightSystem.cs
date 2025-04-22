@@ -24,9 +24,9 @@ public class ClickHoldCubeLightControl : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.gameObject == gameObject)
             {
                 SetLights(true);
-                NightManager.Instance.DrainEnergy();
 
-                // Notify the monster if this is a new light activation
+                NightManager.Instance.DrainEnergyOverTime();
+
                 if (!wasLightOnLastFrame)
                 {
                     MonsterController monster = FindObjectOfType<MonsterController>();
@@ -38,7 +38,6 @@ public class ClickHoldCubeLightControl : MonoBehaviour
 
         SetLights(false);
 
-        // Notify monster if light was just turned off
         if (wasLightOnLastFrame && !IsLightOn)
         {
             MonsterController monster = FindObjectOfType<MonsterController>();
