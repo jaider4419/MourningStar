@@ -2,59 +2,56 @@ using UnityEngine;
 
 public class ClickHoldCubeLightControl : MonoBehaviour
 {
-    private Light[] allLights; // This will include cube's own light + any child lights
+    public MonsterController.WindowPosition windowPosition;
+
+    private Light[] lights;
+    public bool IsLightOn { get; private set; }
+    private bool wasLightOnLastFrame;
 
     void Start()
     {
-        // Get Light on the cube itself
-        Light ownLight = GetComponent<Light>();
-
-        // Get all child Light components (excluding the cube's own Light)
-        Light[] childLights = GetComponentsInChildren<Light>(includeInactive: true);
-
-        // Combine both into one array
-        if (ownLight != null)
-        {
-            allLights = new Light[childLights.Length];
-            int i = 0;
-            foreach (Light l in childLights)
-            {
-                allLights[i++] = l;
-            }
-        }
-        else
-        {
-            allLights = childLights;
-        }
-
-        // Start with all lights off
+        lights = GetComponentsInChildren<Light>(true);
         SetLights(false);
     }
 
     void Update()
     {
-        if (Input.GetMouseButton(0)) // Mouse held down
+        wasLightOnLastFrame = IsLightOn;
+
+        if (Input.GetMouseButton(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.gameObject == gameObject)
             {
-                if (hit.collider.gameObject == gameObject)
+                SetLights(true);
+                NightManager.Instance.DrainEnergy();
+
+                // Notify the monster if this is a new light activation
+                if (!wasLightOnLastFrame)
                 {
-                    SetLights(true);
-                    return;
+                    MonsterController monster = FindObjectOfType<MonsterController>();
+                    if (monster != null) monster.OnLightExposed(windowPosition);
                 }
+                return;
             }
         }
 
-        // Not clicking or clicked off
         SetLights(false);
+
+        // Notify monster if light was just turned off
+        if (wasLightOnLastFrame && !IsLightOn)
+        {
+            MonsterController monster = FindObjectOfType<MonsterController>();
+            if (monster != null) monster.OnLightRemoved();
+        }
     }
 
-    void SetLights(bool state)
+    public void SetLights(bool state)
     {
-        foreach (Light l in allLights)
+        IsLightOn = state;
+        foreach (Light l in lights)
         {
-            l.enabled = state;
+            if (l != null) l.enabled = state;
         }
     }
 }
