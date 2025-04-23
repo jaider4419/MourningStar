@@ -8400,6 +8400,8 @@ MonoBehaviour:
   JournalChange: {fileID: 380492970}
   Book: {fileID: 0}
   AcquiredJournal: {fileID: 462667560}
+  HideUi: {fileID: 0}
+  AnotherActive: {fileID: 0}
 --- !u!114 &1574886973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8757,7 +8759,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619397665}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cf469fe72881f04ebfa74e2bfbdebf2, type: 3}
   m_Name: 
