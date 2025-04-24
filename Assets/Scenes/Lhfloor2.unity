@@ -8925,6 +8925,8 @@ MonoBehaviour:
   JournalChange: {fileID: 380492970}
   Book: {fileID: 0}
   AcquiredJournal: {fileID: 462667560}
+  HideUi: {fileID: 0}
+  AnotherActive: {fileID: 0}
 --- !u!114 &1574886973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9133,7 +9135,6 @@ GameObject:
   - component: {fileID: 1619397669}
   - component: {fileID: 1619397667}
   - component: {fileID: 1619397668}
-  - component: {fileID: 1619397671}
   m_Layer: 0
   m_Name: 'Camera '
   m_TagString: MainCamera
@@ -9275,21 +9276,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &1619397671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619397665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cf469fe72881f04ebfa74e2bfbdebf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1352408591}
-  smoothTime: 0.25
-  offset: {x: -5.3, y: 14, z: -7.51}
 --- !u!1 &1669138897
 GameObject:
   m_ObjectHideFlags: 0
