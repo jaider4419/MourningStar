@@ -51,7 +51,7 @@ public class ObjectInspector : MonoBehaviour
         }
     }
 
-    void StartInspecting(Transform obj)
+   public void StartInspecting(Transform obj)
     {
         currentObject = obj;
         isInspecting = true;
@@ -74,7 +74,7 @@ public class ObjectInspector : MonoBehaviour
         if (obj.TryGetComponent(out Collider col)) col.enabled = false;
     }
 
-    void StopInspecting()
+    public void StopInspecting()
     {
         // Unfreeze the game
         Time.timeScale = 1f;
