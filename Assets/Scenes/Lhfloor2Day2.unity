@@ -4080,8 +4080,8 @@ RectTransform:
   - {fileID: 369041281}
   - {fileID: 576002862}
   - {fileID: 380492973}
-  - {fileID: 1522668089}
   - {fileID: 1502955740}
+  - {fileID: 1522668089}
   - {fileID: 1705196990}
   - {fileID: 1977133163}
   - {fileID: 126174746}
@@ -4092,7 +4092,6 @@ RectTransform:
   - {fileID: 1495989069}
   - {fileID: 641128535}
   - {fileID: 1342169503}
-  - {fileID: 1034546083}
   - {fileID: 1848528592}
   - {fileID: 1120948881}
   - {fileID: 792883323}
@@ -5166,6 +5165,7 @@ GameObject:
   - component: {fileID: 710555793}
   - component: {fileID: 710555795}
   - component: {fileID: 710555796}
+  - component: {fileID: 710555797}
   m_Layer: 0
   m_Name: Code Haver
   m_TagString: Untagged
@@ -5235,6 +5235,20 @@ MonoBehaviour:
     m_Bits: 0
   exitKey: 27
   rotateKey: 323
+--- !u!114 &710555797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710555792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90921620b75c214fbe399f9d63e529f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameObjectA: {fileID: 1502955739}
+  GameObjectB: {fileID: 1034546082}
 --- !u!1 &711237355
 GameObject:
   m_ObjectHideFlags: 0
@@ -6923,18 +6937,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1502955739}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
         - m_Target: {fileID: 1522668088}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
@@ -6946,6 +6948,18 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1502955739}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
           m_CallState: 2
 --- !u!114 &915910797
 MonoBehaviour:
@@ -7402,17 +7416,17 @@ RectTransform:
   m_GameObject: {fileID: 1034546082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.4938, y: 2.4938, z: 2.4938}
+  m_LocalScale: {x: 5.186341, y: 8.293316, z: 7.029739}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 817324044}
   - {fileID: 1838660200}
   - {fileID: 967214770}
-  m_Father: {fileID: 600509326}
+  m_Father: {fileID: 1120948881}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 480, y: -201}
+  m_AnchoredPosition: {x: 1264.4539, y: 309.2784}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1034546084
@@ -7623,6 +7637,7 @@ RectTransform:
   - {fileID: 1355322968}
   - {fileID: 1599938880}
   - {fileID: 1698862041}
+  - {fileID: 1034546083}
   m_Father: {fileID: 600509326}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9683,12 +9698,12 @@ GameObject:
   - component: {fileID: 1502955742}
   - component: {fileID: 1502955741}
   m_Layer: 5
-  m_Name: quest appear update (1)
+  m_Name: next quest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1502955740
 RectTransform:
   m_ObjectHideFlags: 0
