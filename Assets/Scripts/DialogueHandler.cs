@@ -38,6 +38,11 @@ public class DialogueHandler : MonoBehaviour
         yield return new WaitForSeconds(3);
         Dialogues[4].SetActive(true);
         yield return new WaitForSeconds(3);
+
+        Dialogues[4].SetActive(false);
         StopCoroutine(Dialogue());
+        Dialogues[2].SetActive(false);
+
     }
+
 }
