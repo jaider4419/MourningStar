@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Lhfloor2.unity
     guid: 6ca0597102ca31944a78414fa7227b3f
   - enabled: 1
-    path: Assets/Scenes/Night.unity
+    path: Assets/Scenes/fakenight.unity
     guid: 10c7079c732e374438e6dfee942d7929
   - enabled: 1
     path: Assets/Scenes/ShackNight1.unity
@@ -44,4 +44,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lhfloor2Day2.unity
     guid: dc9faac05561d5f45a966a1b5ee85443
+  - enabled: 1
+    path: Assets/Scenes/TestAgainBruh#.unity
+    guid: 0808d63c23cdaf2408e5bb4863ccac35
+  - enabled: 1
+    path: Assets/Scenes/Night.unity
+    guid: 34511a733c2c3174f8ead3806691724f
+  - enabled: 1
+    path: Assets/Scenes/Night2.unity
+    guid: 71046bd232c122c4bb323bacbe16221b
+  - enabled: 1
+    path: Assets/Scenes/ShackNight2.unity
+    guid: c4b097eb2226e774f8ab4743b7497731
+  - enabled: 1
+    path: Assets/Scenes/ShackDay3.unity
+    guid: 46e31055f5333604bb9c8c7012896ac3
   m_configObjects: {}

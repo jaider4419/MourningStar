@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 29.2, y: 141.7, z: 41.5}
-  m_LocalScale: {x: 2.971162, y: 2.971162, z: 2.971162}
+  m_LocalScale: {x: 4.9407454, y: 4.9407454, z: 4.9407454}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPosition: {x: 29.2, y: 141.7, z: 41.5}
   targetPosition: {x: 49.52, y: 138.46, z: -75.6}
-  swimSpeed: 3.14
+  swimSpeed: 6
   destroyAtDestination: 1
   scaredSpeedMultiplier: 3
   scaredDuration: 2

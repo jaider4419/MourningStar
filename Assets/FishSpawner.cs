@@ -114,6 +114,8 @@ public class FishSpawner : MonoBehaviour
         nightEnded = true;
         CancelInvoke(nameof(SpawnFish));
 
+        Time.timeScale = 0f;
+
         if (winPanel != null)
         {
             winPanel.SetActive(true);
@@ -123,12 +125,7 @@ public class FishSpawner : MonoBehaviour
             Debug.LogWarning("Win panel missing!");
         }
 
-        foreach (var fish in spawnedFish)
-        {
-            if (fish != null) Destroy(fish);
-        }
-        spawnedFish.Clear();
-
-        Debug.Log("Player survived the night!");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
