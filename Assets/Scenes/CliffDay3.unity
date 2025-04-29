@@ -8343,7 +8343,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 820772237}
+        - m_Target: {fileID: 929412363}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -8353,12 +8353,12 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 1466185438}
-          m_TargetAssemblyTypeName: JournalActivator, Assembly-CSharp
-          m_MethodName: Activate
-          m_Mode: 1
+        - m_Target: {fileID: 820772237}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10152,17 +10152,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1466185438}
-          m_TargetAssemblyTypeName: JournalActivator, Assembly-CSharp
-          m_MethodName: Activate
-          m_Mode: 1
+        - m_Target: {fileID: 1021223695}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
 --- !u!114 &929412366
 MonoBehaviour:
@@ -10216,6 +10216,7 @@ GameObject:
   - component: {fileID: 929757810}
   - component: {fileID: 929757809}
   - component: {fileID: 929757814}
+  - component: {fileID: 929757815}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10281,7 +10282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EventMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1919
   m_MaxRayIntersections: 0
 --- !u!81 &929757811
 AudioListener:
@@ -10372,6 +10373,25 @@ MonoBehaviour:
   target: {fileID: 1259075413}
   smoothTime: 0.3
   offset: {x: -6.17, y: 9.53, z: -9.39}
+--- !u!114 &929757815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929757806}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8166c193842e3d54d878a62db51f8322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inspectionDistance: 2
+  rotationSpeed: 10
+  inspectableLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  exitKey: 27
+  rotateKey: 323
 --- !u!1 &949052821
 GameObject:
   m_ObjectHideFlags: 0
@@ -11020,18 +11040,6 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1466185438}
-          m_TargetAssemblyTypeName: JournalActivator, Assembly-CSharp
-          m_MethodName: Activate
-          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -17263,6 +17271,7 @@ GameObject:
   - component: {fileID: 1635106685}
   - component: {fileID: 1635106684}
   - component: {fileID: 1635106683}
+  - component: {fileID: 1635106688}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -17349,13 +17358,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635106682}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 86.33, y: -6.14, z: -8.87}
-  m_LocalScale: {x: 0.50502, y: 0.50502, z: 2.4386408}
+  m_LocalRotation: {x: -0, y: 0.17188643, z: -0, w: 0.9851168}
+  m_LocalPosition: {x: 87.46, y: -8.644, z: -11.62}
+  m_LocalScale: {x: 0.40681887, y: 0.40681887, z: 1.964447}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 19.795, z: 0}
+--- !u!114 &1635106688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635106682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42bbb66c1e8c6c2458d128999d7255cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiPanel: {fileID: 820772237}
 --- !u!1 &1659481629
 GameObject:
   m_ObjectHideFlags: 0
