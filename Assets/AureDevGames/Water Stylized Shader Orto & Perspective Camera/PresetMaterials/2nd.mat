@@ -107,12 +107,12 @@ Material:
     - _GradientRefractionScale: 10
     - _HorizonDistance: 127
     - _IntersectionFoamBlend: 1.09
-    - _IntersectionFoamCutoff: 0
-    - _IntersectionFoamDepth: 0
-    - _IntersectionFoamDirection: 0
-    - _IntersectionFoamFade: 0
-    - _IntersectionFoamSpeed: 0
-    - _IntersectionFoamTiling: 0
+    - _IntersectionFoamCutoff: 0.68
+    - _IntersectionFoamDepth: 0.79
+    - _IntersectionFoamDirection: 0.41
+    - _IntersectionFoamFade: 1.63
+    - _IntersectionFoamSpeed: 0.66
+    - _IntersectionFoamTiling: 1.43
     - _LightingHardness: 0.39
     - _LightingSmoothness: 12.34
     - _NormalScale: 5.07
