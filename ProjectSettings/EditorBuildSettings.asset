@@ -68,4 +68,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CliffDay3.unity
     guid: 1aad00969240257448fcfb96fe0753f2
+  - enabled: 1
+    path: Assets/Scenes/ShackNight3.unity
+    guid: 3e777ae131cf27743a55981b208f78cb
+  - enabled: 1
+    path: Assets/Scenes/ShackDay4.unity
+    guid: 7969a3d7a6d75e44b8b97a51d148f023
+  - enabled: 1
+    path: Assets/Scenes/CliffDay4.unity
+    guid: 21e8e4e02c926564ea5bf30c8a38f799
+  - enabled: 1
+    path: Assets/Scenes/Night3.unity
+    guid: 7472b0827a87e9242bf4e8ca9c069715
   m_configObjects: {}
