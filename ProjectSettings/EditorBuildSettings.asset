@@ -12,72 +12,72 @@ EditorBuildSettings:
     path: Assets/Scenes/RoughCut.unity
     guid: 9c39ace8435befe4987ed2918ef7e52f
   - enabled: 1
-    path: Assets/Scenes/SceneOne.unity
+    path: Assets/Scenes/DAY ONE/SceneOne.unity
     guid: ef607afbd42a4a94f8d200fd31653ada
   - enabled: 1
-    path: Assets/Scenes/Cliff.unity
+    path: Assets/Scenes/DAY ONE/Cliff.unity
     guid: 9f370252a61b276448ff90a402ef6d93
   - enabled: 1
     path: Assets/Scenes/SceneOneNight.unity
     guid: 3d95486fb9cc2ea488cd67db1a977caa
   - enabled: 1
-    path: Assets/Scenes/Lhfloor.unity
+    path: Assets/Scenes/DAY ONE/Lhfloor.unity
     guid: 6ed72e8a2ebfb5d4c8d62afd87707c23
   - enabled: 1
-    path: Assets/Scenes/Lhfloor2.unity
+    path: Assets/Scenes/DAY ONE/Lhfloor2.unity
     guid: 6ca0597102ca31944a78414fa7227b3f
   - enabled: 1
     path: Assets/Scenes/fakenight.unity
     guid: 10c7079c732e374438e6dfee942d7929
   - enabled: 1
-    path: Assets/Scenes/ShackNight1.unity
+    path: Assets/Scenes/DAY ONE/ShackNight1.unity
     guid: 5844645052780e34692b47c64039b91b
   - enabled: 1
-    path: Assets/Scenes/ShackDay2.unity
+    path: Assets/Scenes/DAY TWO/ShackDay2.unity
     guid: f567ac8bda259424baf2cbfc84235875
   - enabled: 1
-    path: Assets/Scenes/CliffDay2.unity
+    path: Assets/Scenes/DAY TWO/CliffDay2.unity
     guid: 5b37e1cda6e81344f8e639da2166c97b
   - enabled: 1
-    path: Assets/Scenes/LhfloorDay2.unity
+    path: Assets/Scenes/DAY TWO/LhfloorDay2.unity
     guid: 1413710ab3464fa48835d58c1b78eb24
   - enabled: 1
-    path: Assets/Scenes/Lhfloor2Day2.unity
+    path: Assets/Scenes/DAY TWO/Lhfloor2Day2.unity
     guid: dc9faac05561d5f45a966a1b5ee85443
   - enabled: 1
     path: Assets/Scenes/TestAgainBruh#.unity
     guid: 0808d63c23cdaf2408e5bb4863ccac35
   - enabled: 1
-    path: Assets/Scenes/Night.unity
+    path: Assets/Scenes/DAY ONE/Night.unity
     guid: 34511a733c2c3174f8ead3806691724f
   - enabled: 1
-    path: Assets/Scenes/Night2.unity
+    path: Assets/Scenes/DAY TWO/Night2.unity
     guid: 71046bd232c122c4bb323bacbe16221b
   - enabled: 1
-    path: Assets/Scenes/ShackNight2.unity
+    path: Assets/Scenes/DAY TWO/ShackNight2.unity
     guid: c4b097eb2226e774f8ab4743b7497731
   - enabled: 1
-    path: Assets/Scenes/ShackDay3.unity
+    path: Assets/Scenes/DAY THREE/ShackDay3.unity
     guid: 46e31055f5333604bb9c8c7012896ac3
   - enabled: 1
-    path: Assets/Scenes/LhfloorDay3.unity
+    path: Assets/Scenes/DAY THREE/LhfloorDay3.unity
     guid: 4d6310e1654f74b4d95a79c1c409c58b
   - enabled: 1
-    path: Assets/Scenes/Lhfloor2Day3.unity
+    path: Assets/Scenes/DAY THREE/Lhfloor2Day3.unity
     guid: 2c071ea103f1bff4bbcc9dfaf1992fb4
   - enabled: 1
-    path: Assets/Scenes/CliffDay3.unity
+    path: Assets/Scenes/DAY THREE/CliffDay3.unity
     guid: 1aad00969240257448fcfb96fe0753f2
   - enabled: 1
-    path: Assets/Scenes/ShackNight3.unity
+    path: Assets/Scenes/DAY THREE/ShackNight3.unity
     guid: 3e777ae131cf27743a55981b208f78cb
   - enabled: 1
-    path: Assets/Scenes/ShackDay4.unity
+    path: Assets/Scenes/DAY FOUR/ShackDay4.unity
     guid: 7969a3d7a6d75e44b8b97a51d148f023
   - enabled: 1
-    path: Assets/Scenes/CliffDay4.unity
+    path: Assets/Scenes/DAY FOUR/CliffDay4.unity
     guid: 21e8e4e02c926564ea5bf30c8a38f799
   - enabled: 1
-    path: Assets/Scenes/Night3.unity
+    path: Assets/Scenes/DAY THREE/Night3.unity
     guid: 7472b0827a87e9242bf4e8ca9c069715
   m_configObjects: {}

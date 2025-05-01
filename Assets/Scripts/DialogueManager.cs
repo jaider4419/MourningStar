@@ -6,7 +6,7 @@ public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
     public GameObject dialogueUI;
-    public string[] dialogues;
+    private string[] dialogues;
     private int currentDialogueIndex = 0;
 
     private void Start()
@@ -45,8 +45,6 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         dialogueUI.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     private void Update()
