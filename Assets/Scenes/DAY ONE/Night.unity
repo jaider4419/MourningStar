@@ -3206,7 +3206,7 @@ MonoBehaviour:
   spawnRate: 2
   maxFish: 3
   spawnPointCooldown: 10
-  nightDuration: 120
+  nightDuration: 20
   winPanel: {fileID: 2130013601}
   spawnPoints:
   - {fileID: 663597956}
