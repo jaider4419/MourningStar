@@ -14,8 +14,8 @@ public class StaticSpotlight : MonoBehaviour
     [Header("Energy System")]
     [SerializeField] private float maxEnergy = 100f;
     [SerializeField] private float currentEnergy = 100f;
-    [SerializeField] private float energyDrainInterval = 10f;
-    [SerializeField] private float energyDrainAmount = 20f;
+    [SerializeField] private float energyDrainInterval = 10f; // Time between drains (seconds)
+    [SerializeField] private float energyDrainAmount = 20f; // Amount to drain each interval (%)
     public TMP_Text energyText;
 
     [Header("Fish Detection")]
@@ -27,7 +27,7 @@ public class StaticSpotlight : MonoBehaviour
     private Transform lightRotator;
     private Vector3? lockedPosition = null;
     private bool isLightActive = false;
-    private Coroutine drainCoroutine;
+    private float continuousLightTime = 0f;
 
     void Start()
     {
@@ -71,6 +71,23 @@ public class StaticSpotlight : MonoBehaviour
         {
             DeactivateLight();
         }
+
+        // Track continuous light usage
+        if (isLightActive)
+        {
+            continuousLightTime += Time.deltaTime;
+
+            // Check if we've reached a drain interval
+            if (continuousLightTime >= energyDrainInterval)
+            {
+                DrainEnergy();
+                continuousLightTime = 0f; // Reset timer
+            }
+        }
+        else
+        {
+            continuousLightTime = 0f; // Reset if light is off
+        }
     }
 
     void TryActivateLight()
@@ -84,10 +101,6 @@ public class StaticSpotlight : MonoBehaviour
             lightContainer.position = lockedPosition.Value;
             spotlight.enabled = true;
             isLightActive = true;
-
-            if (drainCoroutine != null) StopCoroutine(drainCoroutine);
-            drainCoroutine = StartCoroutine(EnergyDrainCoroutine());
-
             ScareFishInArea(lockedPosition.Value);
         }
     }
@@ -97,32 +110,20 @@ public class StaticSpotlight : MonoBehaviour
         lockedPosition = null;
         spotlight.enabled = false;
         isLightActive = false;
-
-        if (drainCoroutine != null)
-        {
-            StopCoroutine(drainCoroutine);
-            drainCoroutine = null;
-        }
     }
 
-    IEnumerator EnergyDrainCoroutine()
+    void DrainEnergy()
     {
-        while (isLightActive && currentEnergy > 0)
+        if (currentEnergy <= 0) return;
+
+        currentEnergy = Mathf.Max(0, currentEnergy - energyDrainAmount);
+        UpdateEnergyUI();
+
+        Debug.Log($"Energy drained! Current: {currentEnergy}%");
+
+        if (currentEnergy <= 0)
         {
-            yield return new WaitForSeconds(energyDrainInterval);
-
-            if (!isLightActive) yield break; 
-
-            currentEnergy = Mathf.Max(0, currentEnergy - energyDrainAmount);
-            UpdateEnergyUI();
-
-            Debug.Log($"Energy drained! Current: {currentEnergy}%");
-
-            if (currentEnergy <= 0)
-            {
-                DeactivateLight();
-                yield break;
-            }
+            DeactivateLight();
         }
     }
 
@@ -130,7 +131,7 @@ public class StaticSpotlight : MonoBehaviour
     {
         if (energyText != null)
         {
-            energyText.text = $"ENERGY: {Mathf.RoundToInt(currentEnergy)}%";
+            energyText.text = $" {Mathf.RoundToInt(currentEnergy)}%";
         }
     }
 
@@ -141,7 +142,7 @@ public class StaticSpotlight : MonoBehaviour
         foreach (var hitCollider in hitColliders)
         {
             if (hitCollider.TryGetComponent<Fish>(out Fish fish))
-            { 
+            {
                 fish.ScareFish(position);
                 if (debugMode) Debug.Log($"Scared fish: {hitCollider.name}");
             }

@@ -2480,11 +2480,11 @@ MonoBehaviour:
   lightScaleMultiplier: 42.9
   maxEnergy: 100
   currentEnergy: 100
-  energyDrainInterval: 20
-  energyDrainAmount: 50
-  energyText: {fileID: 720555213}
+  energyDrainInterval: 10
+  energyDrainAmount: 20
+  energyText: {fileID: 681371228}
   fishDetectionRadius: 18.2
-  debugMode: 1
+  debugMode: 0
 --- !u!4 &1009291484
 Transform:
   m_ObjectHideFlags: 0

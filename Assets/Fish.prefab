@@ -134,7 +134,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 16
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7006683709135196948
 MonoBehaviour:
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPosition: {x: 29.2, y: 141.7, z: 41.5}
   targetPosition: {x: 49.52, y: 138.46, z: -75.6}
-  swimSpeed: 6
+  swimSpeed: 10
   destroyAtDestination: 1
   scaredSpeedMultiplier: 3
   scaredDuration: 2
