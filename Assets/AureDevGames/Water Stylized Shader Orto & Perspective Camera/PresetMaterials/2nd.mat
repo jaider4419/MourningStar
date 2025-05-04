@@ -25,6 +25,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _A_SHORT_HIKE_MODE
   - _PERSPECTIVE
   - _REFLECTIONS
   - _WORLD_SPACE_UV
@@ -93,7 +94,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _A_SHORT_HIKE_MODE: 0
+    - _A_SHORT_HIKE_MODE: 1
     - _BOILING: 0
     - _BoilingSpeed: 0
     - _BoilingStrength: 1
@@ -107,12 +108,12 @@ Material:
     - _GradientRefractionScale: 10
     - _HorizonDistance: 127
     - _IntersectionFoamBlend: 1.09
-    - _IntersectionFoamCutoff: 0.68
-    - _IntersectionFoamDepth: 0.79
+    - _IntersectionFoamCutoff: 2.82
+    - _IntersectionFoamDepth: 1.81
     - _IntersectionFoamDirection: 0.41
-    - _IntersectionFoamFade: 1.63
-    - _IntersectionFoamSpeed: 0.66
-    - _IntersectionFoamTiling: 1.43
+    - _IntersectionFoamFade: 1.88
+    - _IntersectionFoamSpeed: 1.31
+    - _IntersectionFoamTiling: 2
     - _LightingHardness: 0.39
     - _LightingSmoothness: 12.34
     - _NormalScale: 5.07
@@ -140,7 +141,7 @@ Material:
     - _TileSize: 200
     - _WORLD_SPACE_UV: 1
     - _WaterAlpha: 1
-    - _WaterMetallic: 0.5
+    - _WaterMetallic: 0.115
     - _WaterSmoothness: 0.241
     - _WaveLength: 5.87
     - _WaveSpeed: 1.89
