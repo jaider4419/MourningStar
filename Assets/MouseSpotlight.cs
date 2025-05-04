@@ -1,26 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
-using System.Collections;
 
 public class StaticSpotlight : MonoBehaviour
 {
-    [Header("Light Settings")]
     public Light spotlight;
     public LayerMask waterLayer;
     [SerializeField] private LayerMask fishLayer;
     public float heightAboveWater = 5f;
     public float lightScaleMultiplier = 10f;
-
-    [Header("Energy System")]
-    [SerializeField] private float maxEnergy = 100f;
-    [SerializeField] private float currentEnergy = 100f;
-    [SerializeField] private float energyDrainInterval = 10f; // Time between drains (seconds)
-    [SerializeField] private float energyDrainAmount = 20f; // Amount to drain each interval (%)
+    public Image[] batteryBars;
     public TMP_Text energyText;
-
-    [Header("Fish Detection")]
-    public float fishDetectionRadius = 5f;
-    public bool debugMode = true;
+    public float fishDetectionRadius = 10f;
 
     private Camera mainCamera;
     private Transform lightContainer;
@@ -28,6 +19,7 @@ public class StaticSpotlight : MonoBehaviour
     private Vector3? lockedPosition = null;
     private bool isLightActive = false;
     private float continuousLightTime = 0f;
+    private int currentBatteryIndex = 5;
 
     void Start()
     {
@@ -49,13 +41,8 @@ public class StaticSpotlight : MonoBehaviour
             spotlight.enabled = false;
         }
 
-        if (fishLayer == 0)
-        {
-            fishLayer = LayerMask.GetMask("Fish");
-            Debug.Log("Auto-assigned Fish layer to spotlight");
-        }
-
-        currentEnergy = maxEnergy;
+        if (fishLayer == 0) fishLayer = LayerMask.GetMask("Fish");
+        currentBatteryIndex = batteryBars.Length - 1;
         UpdateEnergyUI();
     }
 
@@ -63,36 +50,41 @@ public class StaticSpotlight : MonoBehaviour
     {
         if (spotlight == null) return;
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            TryActivateLight();
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            DeactivateLight();
-        }
+        if (Input.GetMouseButtonDown(0)) TryActivateLight();
+        else if (Input.GetMouseButtonUp(0)) DeactivateLight();
 
-        // Track continuous light usage
         if (isLightActive)
         {
             continuousLightTime += Time.deltaTime;
-
-            // Check if we've reached a drain interval
-            if (continuousLightTime >= energyDrainInterval)
+            if (continuousLightTime >= 15f)
             {
-                DrainEnergy();
-                continuousLightTime = 0f; // Reset timer
+                DrainBattery();
+                continuousLightTime = 0f;
             }
         }
-        else
+    }
+
+    void DrainBattery()
+    {
+        if (currentBatteryIndex < 0) return;
+        batteryBars[currentBatteryIndex].gameObject.SetActive(false);
+        currentBatteryIndex--;
+        UpdateEnergyUI();
+        if (currentBatteryIndex < 0) DeactivateLight();
+    }
+
+    void UpdateEnergyUI()
+    {
+        if (energyText != null)
         {
-            continuousLightTime = 0f; // Reset if light is off
+            float energyPercent = ((float)(currentBatteryIndex + 1) / batteryBars.Length) * 100f;
+            energyText.text = $"{Mathf.RoundToInt(energyPercent)}%";
         }
     }
 
     void TryActivateLight()
     {
-        if (currentEnergy <= 0) return;
+        if (currentBatteryIndex < 0) return;
 
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, waterLayer))
@@ -107,63 +99,19 @@ public class StaticSpotlight : MonoBehaviour
 
     void DeactivateLight()
     {
-        lockedPosition = null;
         spotlight.enabled = false;
         isLightActive = false;
-    }
-
-    void DrainEnergy()
-    {
-        if (currentEnergy <= 0) return;
-
-        currentEnergy = Mathf.Max(0, currentEnergy - energyDrainAmount);
-        UpdateEnergyUI();
-
-        Debug.Log($"Energy drained! Current: {currentEnergy}%");
-
-        if (currentEnergy <= 0)
-        {
-            DeactivateLight();
-        }
-    }
-
-    void UpdateEnergyUI()
-    {
-        if (energyText != null)
-        {
-            energyText.text = $" {Mathf.RoundToInt(currentEnergy)}%";
-        }
     }
 
     void ScareFishInArea(Vector3 position)
     {
         Collider[] hitColliders = Physics.OverlapSphere(position, fishDetectionRadius, fishLayer);
-
         foreach (var hitCollider in hitColliders)
         {
             if (hitCollider.TryGetComponent<Fish>(out Fish fish))
             {
                 fish.ScareFish(position);
-                if (debugMode) Debug.Log($"Scared fish: {hitCollider.name}");
             }
-        }
-
-        if (debugMode)
-        {
-            Debug.Log($"Detected {hitColliders.Length} fish");
-            foreach (var collider in hitColliders)
-            {
-                Debug.DrawLine(position, collider.transform.position, Color.red, 1f);
-            }
-        }
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        if (lockedPosition.HasValue)
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(lockedPosition.Value, fishDetectionRadius);
         }
     }
 }
