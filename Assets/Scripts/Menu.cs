@@ -1,31 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class Menu : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
-    public string sceneName;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private string newGameScene = "Level1";
+    [SerializeField] private Button loadGameButton;
+
+    void Start() => loadGameButton.interactable = SaveSystem.SaveExists();
+
+    public void NewGame()
     {
-        
+        SaveLoadManager.Instance.NewGame();
+        SceneManager.LoadScene(newGameScene);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void LoadGame() => SaveLoadManager.Instance.LoadGame();
 
-    public void LoadScene()
-    {
-        SceneManager.LoadScene(sceneName);
-    }
-    
-    public void ExitGame()
+    public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Exited.");
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }
