@@ -18045,11 +18045,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 259
+  near clip plane: -136.1
+  far clip plane: 1028.91
   field of view: 60
   orthographic: 1
-  orthographic size: 4.27
+  orthographic size: 5.9
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -18073,13 +18073,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929757806}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.31191114, y: 0.3015897, z: -0.076278925, w: 0.89773977}
-  m_LocalPosition: {x: 69.78, y: 33.46, z: -38.99}
+  m_LocalRotation: {x: 0.05771286, y: 0.72478694, z: -0.08967659, w: 0.68066967}
+  m_LocalPosition: {x: 8.229787, y: -5.574664, z: -246.7696}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 37.304, y: 38.384, z: 3.689}
+  m_LocalEulerAnglesHint: {x: 12.038, y: 93.358, z: -2.251}
 --- !u!114 &929757814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18094,7 +18094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1316727144}
   smoothTime: 0.3
-  offset: {x: -6.17, y: 9.53, z: -9.39}
+  offset: {x: 100.4, y: -17.1, z: -4.81}
 --- !u!1 &936417828 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4499332151752215736, guid: adf38c1376da0bf478db57ec6e771d85, type: 3}
@@ -37318,13 +37318,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778828104}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.16654101, z: -0, w: 0.9860346}
-  m_LocalPosition: {x: 94.2, y: -3.87, z: -14.63}
-  m_LocalScale: {x: 16.220581, y: 5.694614, z: 12.3842535}
+  m_LocalRotation: {x: -0, y: 0.3909133, z: -0, w: 0.9204275}
+  m_LocalPosition: {x: -101.94, y: 12.18, z: -226.21}
+  m_LocalScale: {x: 23.396566, y: 8.643698, z: 12.3842535}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 19.174, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 46.023, z: 0}
 --- !u!1 &1782825402
 GameObject:
   m_ObjectHideFlags: 0

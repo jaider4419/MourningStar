@@ -2704,15 +2704,14 @@ MonoBehaviour:
   heightAboveWater: 5
   lightScaleMultiplier: 42.9
   batteryBars:
-  - {fileID: 1957859043}
-  - {fileID: 1271547649}
-  - {fileID: 511941012}
-  - {fileID: 1371083322}
-  - {fileID: 823941994}
   - {fileID: 687349260}
+  - {fileID: 823941994}
+  - {fileID: 1371083322}
+  - {fileID: 511941012}
+  - {fileID: 1271547649}
+  - {fileID: 1957859043}
   energyText: {fileID: 681371228}
   fishDetectionRadius: 18.2
-  debugMode: 0
 --- !u!4 &1009291484
 Transform:
   m_ObjectHideFlags: 0
