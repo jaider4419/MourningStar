@@ -1315,10 +1315,10 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 100000
-  m_Range: 80000
-  m_SpotAngle: 179
-  m_InnerSpotAngle: 179
+  m_Intensity: 10000
+  m_Range: 8000
+  m_SpotAngle: 142.4279
+  m_InnerSpotAngle: 131.5918
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -3585,7 +3585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeca75aa383ba6f4d97d6f80fa982c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 6292238154599814039, guid: 4815fd8e094c056429caa82aede76350, type: 3}
+  fishPrefab: {fileID: 6068894276076124194, guid: a53018f30e7e87b4496ea7dfa7cbdb2f, type: 3}
   spawnRate: 2
   maxFish: 3
   spawnPointCooldown: 10
