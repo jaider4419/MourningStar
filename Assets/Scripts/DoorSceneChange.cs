@@ -10,7 +10,7 @@ public class DoorSceneChange : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(SceneName);
             Debug.Log("Loading New Scene");
