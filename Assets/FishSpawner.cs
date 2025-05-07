@@ -3,20 +3,12 @@ using System.Collections.Generic;
 
 public class FishSpawner : MonoBehaviour
 {
-    [Header("Spawning Settings")]
     public GameObject fishPrefab;
     public float spawnRate = 3f;
     public int maxFish = 5;
     public float spawnPointCooldown = 5f;
-
-    [Header("Night Duration")]
-    [Tooltip("Duration of night in seconds")]
     [SerializeField] private float nightDuration = 120f;
-
-    [Header("UI")]
     public GameObject winPanel;
-
-    [Header("Spawn Points")]
     public Transform[] spawnPoints;
 
     private List<GameObject> spawnedFish = new List<GameObject>();
@@ -26,12 +18,6 @@ public class FishSpawner : MonoBehaviour
 
     void Start()
     {
-        if (spawnPoints == null || spawnPoints.Length == 0)
-        {
-            Debug.LogError("No spawn points assigned!");
-            return;
-        }
-
         nightTimer = nightDuration;
 
         foreach (var spawnPoint in spawnPoints)
@@ -70,12 +56,6 @@ public class FishSpawner : MonoBehaviour
 
     void SpawnFish()
     {
-        if (fishPrefab == null)
-        {
-            Debug.LogWarning("Fish prefab missing!");
-            return;
-        }
-
         CleanUpFishList();
 
         if (spawnedFish.Count >= maxFish) return;
@@ -92,7 +72,7 @@ public class FishSpawner : MonoBehaviour
         if (availableSpawnPoints.Count == 0) return;
 
         Transform randomSpawnPoint = availableSpawnPoints[Random.Range(0, availableSpawnPoints.Count)];
-        GameObject newFish = Instantiate(fishPrefab, randomSpawnPoint.position, randomSpawnPoint.rotation);
+        GameObject newFish = Instantiate(fishPrefab, randomSpawnPoint.position, Quaternion.Euler(0, 265.782f, 0));
 
         Fish fishComponent = newFish.GetComponent<Fish>();
         if (fishComponent != null)
@@ -113,16 +93,11 @@ public class FishSpawner : MonoBehaviour
     {
         nightEnded = true;
         CancelInvoke(nameof(SpawnFish));
-
         Time.timeScale = 0f;
 
         if (winPanel != null)
         {
             winPanel.SetActive(true);
-        }
-        else
-        {
-            Debug.LogWarning("Win panel missing!");
         }
 
         Cursor.lockState = CursorLockMode.None;
