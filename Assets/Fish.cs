@@ -2,105 +2,81 @@ using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
+    [Header("Movement Path")]
     public Vector3 spawnPosition;
     public Vector3 targetPosition;
     public float swimSpeed = 2f;
+
+    [Header("Behavior")]
     public bool destroyAtDestination = true;
     public float scaredSpeedMultiplier = 3f;
     public float scaredDuration = 2f;
-
-    [Header("Swim Behavior")]
-    public float swimJitterAmount = 0.5f;
-    public float swimJitterFrequency = 2f;
-    public float tailWagSpeed = 5f;
-    public float tailWagAmount = 15f;
-    public float smoothTurnSpeed = 2f;
+    public float scaredRotationSpeed = 5f;
 
     private bool isScared = false;
     private float scaredTimer = 0f;
     private Vector3 scaredDirection;
     private float originalSpeed;
-    private float currentJitter;
-    private float nextJitterTime;
-    private float wagOffset;
-    private Vector3 currentDirection;
 
     void Awake()
     {
+        if (gameObject.layer != LayerMask.NameToLayer("Fish"))
+        {
+            Debug.LogWarning($"Fish {name} is not on Fish layer!", this);
+        }
+
+        if (GetComponent<Collider>() == null)
+        {
+            Debug.LogError($"Fish {name} has no collider!", this);
+        }
+
         originalSpeed = swimSpeed;
-        LockRotation();
-        currentDirection = (targetPosition - transform.position).normalized;
+    }
+
+    void Start()
+    {
+        transform.position = spawnPosition;
+        FaceTarget();
     }
 
     void Update()
     {
         if (isScared)
         {
-            ScaredMovement();
+            ScaredBehavior();
             return;
         }
 
-        NormalMovement();
-        TailWagAnimation();
-    }
-
-    void NormalMovement()
-    {
-        // Smooth directional changes
-        Vector3 targetDir = (targetPosition - transform.position).normalized;
-        currentDirection = Vector3.Slerp(currentDirection, targetDir, smoothTurnSpeed * Time.deltaTime);
-
-        // Jittery forward movement
-        if (Time.time > nextJitterTime)
+        if (HasReachedDestination())
         {
-            currentJitter = Random.Range(-swimJitterAmount, swimJitterAmount);
-            nextJitterTime = Time.time + (1f / swimJitterFrequency);
-        }
-
-        // Apply movement
-        Vector3 moveDirection = currentDirection + (transform.right * currentJitter);
-        transform.position += moveDirection * swimSpeed * Time.deltaTime;
-
-        // Face movement direction with Y-lock
-        if (moveDirection != Vector3.zero)
-        {
-            Quaternion targetRot = Quaternion.LookRotation(moveDirection);
-            Vector3 euler = targetRot.eulerAngles;
-            euler.y = 265.782f;
-            transform.rotation = Quaternion.Euler(euler.x, euler.y, wagOffset);
-        }
-
-        if (Vector3.Distance(transform.position, targetPosition) < 0.5f && destroyAtDestination)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    void ScaredMovement()
-    {
-        scaredTimer -= Time.deltaTime;
-        if (scaredTimer <= 0)
-        {
-            Destroy(gameObject);
+            if (destroyAtDestination)
+            {
+                Destroy(gameObject);
+            }
             return;
         }
 
-        // Erratic scared movement
-        Vector3 scaredMove = scaredDirection +
-                           (transform.right * Mathf.Sin(Time.time * 20f) * 0.3f +
-                           (transform.up * Mathf.Cos(Time.time * 15f) * 0.2f;
-
-        transform.position += scaredMove * swimSpeed * Time.deltaTime;
-
-        // Frantic rotation
-        float scaredWag = Mathf.Sin(Time.time * 25f) * 30f;
-        transform.rotation = Quaternion.Euler(0, 265.782f, scaredWag);
+        MoveTowardTarget();
     }
 
-    void TailWagAnimation()
+    void FaceTarget()
     {
-        wagOffset = Mathf.Sin(Time.time * tailWagSpeed) * tailWagAmount;
-        transform.Rotate(0, 0, wagOffset - transform.rotation.eulerAngles.z);
+        Vector3 direction = (targetPosition - transform.position).normalized;
+        if (direction != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(direction);
+        }
+    }
+
+    void MoveTowardTarget()
+    {
+        float step = swimSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+    }
+
+    bool HasReachedDestination()
+    {
+        return Vector3.Distance(transform.position, targetPosition) < 0.5f;
     }
 
     public void ScareFish(Vector3 lightPosition)
@@ -108,11 +84,44 @@ public class Fish : MonoBehaviour
         if (isScared) return;
 
         scaredDirection = (transform.position - lightPosition).normalized;
+        if (scaredDirection == Vector3.zero)
+        {
+            scaredDirection = transform.forward;
+        }
         scaredDirection.y = 0;
         scaredDirection.Normalize();
 
         isScared = true;
         scaredTimer = scaredDuration;
         swimSpeed = originalSpeed * scaredSpeedMultiplier;
+
+        // Set new escape target
+        targetPosition = transform.position + scaredDirection * 10f;
+        FaceTarget();
+
+        Debug.Log($"{name} is scared! Swimming to {targetPosition}");
+    }
+
+    void ScaredBehavior()
+    {
+        scaredTimer -= Time.deltaTime;
+
+        if (scaredTimer <= 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        if (scaredDirection != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(scaredDirection);
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                targetRotation,
+                scaredRotationSpeed * Time.deltaTime
+            );
+        }
+
+        transform.position += scaredDirection * swimSpeed * Time.deltaTime;
     }
 }
