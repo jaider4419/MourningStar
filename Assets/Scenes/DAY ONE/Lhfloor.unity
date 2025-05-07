@@ -11144,16 +11144,28 @@ PrefabInstance:
       value: Noah
       objectReference: {fileID: 0}
     - target: {fileID: 3642029712112573040, guid: b0e5ae348bdc6084bb0c3ee88936deb9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6729819
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642029712112573040, guid: b0e5ae348bdc6084bb0c3ee88936deb9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6729819
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642029712112573040, guid: b0e5ae348bdc6084bb0c3ee88936deb9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6729819
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642029712112573040, guid: b0e5ae348bdc6084bb0c3ee88936deb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.29
+      value: 3.633
       objectReference: {fileID: 0}
     - target: {fileID: 3642029712112573040, guid: b0e5ae348bdc6084bb0c3ee88936deb9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.11
+      value: 2.1081
       objectReference: {fileID: 0}
     - target: {fileID: 3642029712112573040, guid: b0e5ae348bdc6084bb0c3ee88936deb9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.69
+      value: -15.371
       objectReference: {fileID: 0}
     - target: {fileID: 3642029712112573040, guid: b0e5ae348bdc6084bb0c3ee88936deb9, type: 3}
       propertyPath: m_LocalRotation.w
