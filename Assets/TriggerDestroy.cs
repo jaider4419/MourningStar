@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class TextTrigger : MonoBehaviour
+public class TriggerDestroy : MonoBehaviour
 {
     public GameObject chosenText;
 
@@ -19,6 +19,7 @@ public class TextTrigger : MonoBehaviour
     {
         chosenText.SetActive(true);
         yield return new WaitForSeconds(6);
+        Destroy(chosenText );
         Debug.Log("Its destroyed");
         chosenText.SetActive(false);
 
