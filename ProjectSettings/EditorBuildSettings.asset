@@ -80,4 +80,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DAY THREE/Night3.unity
     guid: 7472b0827a87e9242bf4e8ca9c069715
+  - enabled: 1
+    path: Assets/Scenes/DAY FOUR/LhfloorDay4.unity
+    guid: 1b3dc041c443ab248b1696bf1934b9c6
   m_configObjects: {}
