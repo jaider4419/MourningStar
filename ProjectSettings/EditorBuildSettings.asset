@@ -83,4 +83,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DAY FOUR/LhfloorDay4.unity
     guid: 1b3dc041c443ab248b1696bf1934b9c6
+  - enabled: 1
+    path: Assets/Scenes/UndergroundFacility.unity
+    guid: e2b58d2b2af6eb04a824313e409a6898
   m_configObjects: {}
