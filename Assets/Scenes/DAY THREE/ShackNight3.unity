@@ -5015,7 +5015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65576e13e7d4ab04da85d80daf39f348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Cliff
+  SceneName: CliffDay4
 --- !u!65 &815088051
 BoxCollider:
   m_ObjectHideFlags: 0

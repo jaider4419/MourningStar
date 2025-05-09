@@ -3,20 +3,13 @@ using System.Collections.Generic;
 
 public class FishSpawner : MonoBehaviour
 {
-    [Header("Spawning Settings")]
     public GameObject fishPrefab;
     public float spawnRate = 3f;
     public int maxFish = 5;
     public float spawnPointCooldown = 5f;
-
-    [Header("Night Duration")]
-    [Tooltip("Duration of night in seconds")]
     [SerializeField] private float nightDuration = 120f;
-
-    [Header("UI")]
     public GameObject winPanel;
-
-    [Header("Spawn Points")]
+    public GameObject losePanel; 
     public Transform[] spawnPoints;
 
     private List<GameObject> spawnedFish = new List<GameObject>();
@@ -28,7 +21,6 @@ public class FishSpawner : MonoBehaviour
     {
         if (spawnPoints == null || spawnPoints.Length == 0)
         {
-            Debug.LogError("No spawn points assigned!");
             return;
         }
 
@@ -44,6 +36,11 @@ public class FishSpawner : MonoBehaviour
         if (winPanel != null)
         {
             winPanel.SetActive(false);
+        }
+
+        if (losePanel != null)
+        {
+            losePanel.SetActive(false);
         }
     }
 
@@ -68,11 +65,28 @@ public class FishSpawner : MonoBehaviour
         }
     }
 
+    public void TriggerLoseCondition()
+    {
+        if (nightEnded) return;
+
+        nightEnded = true;
+        CancelInvoke(nameof(SpawnFish));
+
+        Time.timeScale = 0f;
+
+        if (losePanel != null)
+        {
+            losePanel.SetActive(true);
+        }
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     void SpawnFish()
     {
         if (fishPrefab == null)
         {
-            Debug.LogWarning("Fish prefab missing!");
             return;
         }
 
@@ -119,10 +133,6 @@ public class FishSpawner : MonoBehaviour
         if (winPanel != null)
         {
             winPanel.SetActive(true);
-        }
-        else
-        {
-            Debug.LogWarning("Win panel missing!");
         }
 
         Cursor.lockState = CursorLockMode.None;

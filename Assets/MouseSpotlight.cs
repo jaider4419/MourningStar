@@ -12,6 +12,7 @@ public class StaticSpotlight : MonoBehaviour
     public Image[] batteryBars;
     public TMP_Text energyText;
     public float fishDetectionRadius = 10f;
+    public float batteryDrainInterval = 3f; // New configurable variable
 
     private Camera mainCamera;
     private Transform lightContainer;
@@ -56,7 +57,7 @@ public class StaticSpotlight : MonoBehaviour
         if (isLightActive)
         {
             continuousLightTime += Time.deltaTime;
-            if (continuousLightTime >= 15f)
+            if (continuousLightTime >= batteryDrainInterval) 
             {
                 DrainBattery();
                 continuousLightTime = 0f;
@@ -70,7 +71,16 @@ public class StaticSpotlight : MonoBehaviour
         batteryBars[currentBatteryIndex].gameObject.SetActive(false);
         currentBatteryIndex--;
         UpdateEnergyUI();
-        if (currentBatteryIndex < 0) DeactivateLight();
+
+        if (currentBatteryIndex < 0)
+        {
+            DeactivateLight();
+            FishSpawner fishSpawner = FindObjectOfType<FishSpawner>();
+            if (fishSpawner != null)
+            {
+                fishSpawner.TriggerLoseCondition();
+            }
+        }
     }
 
     void UpdateEnergyUI()
