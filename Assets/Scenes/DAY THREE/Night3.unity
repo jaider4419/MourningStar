@@ -2478,13 +2478,10 @@ MonoBehaviour:
     m_Bits: 1024
   heightAboveWater: 5
   lightScaleMultiplier: 42.9
-  maxEnergy: 100
-  currentEnergy: 100
-  energyDrainInterval: 20
-  energyDrainAmount: 50
+  batteryBars: []
   energyText: {fileID: 720555213}
   fishDetectionRadius: 18.2
-  debugMode: 1
+  batteryDrainInterval: 3
 --- !u!4 &1009291484
 Transform:
   m_ObjectHideFlags: 0
@@ -3208,6 +3205,7 @@ MonoBehaviour:
   spawnPointCooldown: 10
   nightDuration: 20
   winPanel: {fileID: 2130013601}
+  losePanel: {fileID: 0}
   spawnPoints:
   - {fileID: 663597956}
   - {fileID: 983917559}
@@ -3995,7 +3993,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2130013602
 MonoBehaviour:
   m_ObjectHideFlags: 0
