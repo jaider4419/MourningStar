@@ -1,13 +1,13 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Click3DObject : MonoBehaviour
 {
-    public GameObject uiPanel; 
+    public GameObject uiPanel;
+    [SerializeField] private AudioSource audioSource; 
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -16,10 +16,11 @@ public class Click3DObject : MonoBehaviour
             {
                 if (hit.collider.gameObject == gameObject)
                 {
+                    PlayClickSound(); 
                     TriggerUIPanel();
                 }
             }
-        } 
+        }
     }
 
     void TriggerUIPanel()
@@ -27,6 +28,14 @@ public class Click3DObject : MonoBehaviour
         if (uiPanel != null)
         {
             uiPanel.SetActive(true);
+        }
+    }
+
+    void PlayClickSound()
+    {
+        if (audioSource != null && audioSource.clip != null)
+        {
+            audioSource.Play();
         }
     }
 }

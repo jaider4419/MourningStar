@@ -574,6 +574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiPanel: {fileID: 820772237}
+  audioSource: {fileID: 0}
 --- !u!4 &44344283 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 810a186d6acf28f42b82e9b14f9c3752, type: 3}
@@ -20177,6 +20178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiPanel: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!65 &1228872825
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23773,7 +23775,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Something is waiting for you at the docks.'
+  m_text: '- Something has washed up on the shore.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c5d78d61cec187e4197079110ad0280c, type: 2}
   m_sharedMaterial: {fileID: -2042049430879880105, guid: c5d78d61cec187e4197079110ad0280c, type: 2}
@@ -45169,6 +45171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiPanel: {fileID: 820772237}
+  audioSource: {fileID: 0}
 --- !u!114 &1896743767
 MonoBehaviour:
   m_ObjectHideFlags: 0

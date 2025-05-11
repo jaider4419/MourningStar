@@ -5321,6 +5321,13 @@ MonoBehaviour:
   - {fileID: 578018300}
   - {fileID: 96081098}
   - {fileID: 541875315}
+  DialogueAudioClips: []
+  DisplayTimes:
+  - 4
+  - 2
+  - 5
+  - 3
+  - 3
 --- !u!1 &884207785
 GameObject:
   m_ObjectHideFlags: 0

@@ -5072,6 +5072,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogues:
   - {fileID: 1268922305}
+  DialogueAudioClips: []
+  DisplayTimes:
+  - 4
+  - 2
+  - 5
+  - 3
+  - 3
 --- !u!1 &884207785
 GameObject:
   m_ObjectHideFlags: 0

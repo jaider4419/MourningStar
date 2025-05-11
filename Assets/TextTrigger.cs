@@ -1,26 +1,58 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections;
 
 public class TextTrigger : MonoBehaviour
 {
     public GameObject chosenText;
+    [SerializeField] private AudioSource audioSource;
+    private Coroutine displayCoroutine;
 
     private void OnTriggerEnter(Collider other)
     {
-       if (other.tag == "Player")
+        if (other.CompareTag("Player") && chosenText != null)
         {
-            StartCoroutine(TimeDisplay());
+            if (displayCoroutine != null)
+            {
+                StopCoroutine(displayCoroutine);
+            }
+
+            chosenText.SetActive(true);
+            PlayTriggerSound();
+
+            displayCoroutine = StartCoroutine(HideAfterDelay(6f));
         }
     }
 
-    IEnumerator TimeDisplay()
+    private IEnumerator HideAfterDelay(float delay)
     {
-        chosenText.SetActive(true);
-        yield return new WaitForSeconds(6);
-        Debug.Log("Its destroyed");
-        chosenText.SetActive(false);
+        yield return new WaitForSeconds(delay);
 
+        if (chosenText != null) 
+        {
+            chosenText.SetActive(false);
+        }
+        displayCoroutine = null;
+    }
+
+    private void PlayTriggerSound()
+    {
+        if (audioSource != null && audioSource.clip != null && audioSource.isActiveAndEnabled)
+        {
+            audioSource.Play();
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (displayCoroutine != null)
+        {
+            StopCoroutine(displayCoroutine);
+            displayCoroutine = null;
+        }
+
+        if (chosenText != null)
+        {
+            chosenText.SetActive(false);
+        }
     }
 }
