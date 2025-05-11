@@ -9,22 +9,29 @@ public class Fish : MonoBehaviour
 
     private bool isScared = false;
     private float scaredTimer = 0f;
+    private FishSpawner spawner;
+
+    public void SetSpawner(FishSpawner spawnerRef)
+    {
+        spawner = spawnerRef;
+    }
 
     void Awake()
     {
         if (gameObject.layer != LayerMask.NameToLayer("Fish"))
         {
+            Debug.LogWarning("Fish object is not on the Fish layer", this);
         }
 
         if (GetComponent<Collider>() == null)
         {
+            Debug.LogWarning("Fish is missing a Collider component", this);
         }
     }
 
     void Start()
     {
         transform.position = spawnPosition;
-        FaceTarget();
     }
 
     void Update()
@@ -34,6 +41,7 @@ public class Fish : MonoBehaviour
             scaredTimer -= Time.deltaTime;
             if (scaredTimer <= 0f)
             {
+                if (spawner != null) spawner.RemoveFish(gameObject);
                 Destroy(gameObject);
             }
             return;
@@ -43,6 +51,7 @@ public class Fish : MonoBehaviour
         {
             if (destroyAtDestination)
             {
+                if (spawner != null) spawner.RemoveFish(gameObject);
                 Destroy(gameObject);
             }
             return;
@@ -51,19 +60,13 @@ public class Fish : MonoBehaviour
         MoveTowardTarget();
     }
 
-    void FaceTarget()
-    {
-        Vector3 direction = (targetPosition - transform.position).normalized;
-        if (direction != Vector3.zero)
-        {
-            transform.rotation = Quaternion.LookRotation(direction);
-        }
-    }
-
     void MoveTowardTarget()
     {
-        float step = swimSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            targetPosition,
+            swimSpeed * Time.deltaTime
+        );
     }
 
     bool HasReachedDestination()
@@ -77,5 +80,13 @@ public class Fish : MonoBehaviour
 
         isScared = true;
         scaredTimer = 0.5f;
+    }
+
+    void OnDestroy()
+    {
+        if (spawner != null)
+        {
+            spawner.RemoveFish(gameObject);
+        }
     }
 }

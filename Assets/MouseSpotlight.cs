@@ -12,7 +12,11 @@ public class StaticSpotlight : MonoBehaviour
     public Image[] batteryBars;
     public TMP_Text energyText;
     public float fishDetectionRadius = 10f;
-    public float batteryDrainInterval = 3f; // New configurable variable
+    public float batteryDrainInterval = 3f;
+
+    [Header("Audio")]
+    public AudioSource lightAudioSource;
+    public AudioClip lightHumSound;
 
     private Camera mainCamera;
     private Transform lightContainer;
@@ -49,7 +53,11 @@ public class StaticSpotlight : MonoBehaviour
 
     void Update()
     {
-        if (spotlight == null) return;
+        if (spotlight == null || Time.timeScale == 0f)
+        {
+            if (isLightActive) DeactivateLight();
+            return;
+        }
 
         if (Input.GetMouseButtonDown(0)) TryActivateLight();
         else if (Input.GetMouseButtonUp(0)) DeactivateLight();
@@ -57,11 +65,44 @@ public class StaticSpotlight : MonoBehaviour
         if (isLightActive)
         {
             continuousLightTime += Time.deltaTime;
-            if (continuousLightTime >= batteryDrainInterval) 
+            if (continuousLightTime >= batteryDrainInterval)
             {
                 DrainBattery();
                 continuousLightTime = 0f;
             }
+        }
+    }
+
+    void TryActivateLight()
+    {
+        if (currentBatteryIndex < 0 || Time.timeScale == 0f) return;
+
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, waterLayer))
+        {
+            lockedPosition = hit.point + Vector3.up * heightAboveWater;
+            lightContainer.position = lockedPosition.Value;
+            spotlight.enabled = true;
+            isLightActive = true;
+
+            if (lightHumSound != null && lightAudioSource != null)
+            {
+                lightAudioSource.clip = lightHumSound;
+                lightAudioSource.Play();
+            }
+
+            ScareFishInArea(lockedPosition.Value);
+        }
+    }
+
+    void DeactivateLight()
+    {
+        spotlight.enabled = false;
+        isLightActive = false;
+
+        if (lightAudioSource != null && lightAudioSource.isPlaying)
+        {
+            lightAudioSource.Stop();
         }
     }
 
@@ -90,27 +131,6 @@ public class StaticSpotlight : MonoBehaviour
             float energyPercent = ((float)(currentBatteryIndex + 1) / batteryBars.Length) * 100f;
             energyText.text = $"{Mathf.RoundToInt(energyPercent)}%";
         }
-    }
-
-    void TryActivateLight()
-    {
-        if (currentBatteryIndex < 0) return;
-
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, waterLayer))
-        {
-            lockedPosition = hit.point + Vector3.up * heightAboveWater;
-            lightContainer.position = lockedPosition.Value;
-            spotlight.enabled = true;
-            isLightActive = true;
-            ScareFishInArea(lockedPosition.Value);
-        }
-    }
-
-    void DeactivateLight()
-    {
-        spotlight.enabled = false;
-        isLightActive = false;
     }
 
     void ScareFishInArea(Vector3 position)

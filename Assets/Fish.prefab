@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7006683709135196948}
   m_Layer: 10
   m_Name: Fish
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,6 +152,3 @@ MonoBehaviour:
   targetPosition: {x: 49.52, y: 138.46, z: -75.6}
   swimSpeed: 20
   destroyAtDestination: 1
-  scaredSpeedMultiplier: 3
-  scaredDuration: 2
-  scaredRotationSpeed: 5

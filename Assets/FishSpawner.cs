@@ -9,8 +9,16 @@ public class FishSpawner : MonoBehaviour
     public float spawnPointCooldown = 5f;
     [SerializeField] private float nightDuration = 120f;
     public GameObject winPanel;
-    public GameObject losePanel; 
-    public Transform[] spawnPoints;
+    public GameObject losePanel;
+
+    [System.Serializable]
+    public class SpawnPoint
+    {
+        public Transform transform;
+        public Vector3 lookDirection;
+    }
+
+    public SpawnPoint[] spawnPoints;
 
     private List<GameObject> spawnedFish = new List<GameObject>();
     private Dictionary<Transform, float> spawnPointCooldowns = new Dictionary<Transform, float>();
@@ -19,29 +27,17 @@ public class FishSpawner : MonoBehaviour
 
     void Start()
     {
-        if (spawnPoints == null || spawnPoints.Length == 0)
-        {
-            return;
-        }
-
         nightTimer = nightDuration;
 
-        foreach (var spawnPoint in spawnPoints)
+        foreach (var point in spawnPoints)
         {
-            spawnPointCooldowns[spawnPoint] = 0f;
+            spawnPointCooldowns[point.transform] = 0f;
         }
 
         InvokeRepeating(nameof(SpawnFish), 0f, spawnRate);
 
-        if (winPanel != null)
-        {
-            winPanel.SetActive(false);
-        }
-
-        if (losePanel != null)
-        {
-            losePanel.SetActive(false);
-        }
+        if (winPanel != null) winPanel.SetActive(false);
+        if (losePanel != null) losePanel.SetActive(false);
     }
 
     void Update()
@@ -49,20 +45,63 @@ public class FishSpawner : MonoBehaviour
         if (nightEnded) return;
 
         nightTimer -= Time.deltaTime;
+        if (nightTimer <= 0f) EndNight();
 
-        if (nightTimer <= 0f)
+        foreach (var point in spawnPoints)
         {
-            EndNight();
-        }
-
-        List<Transform> keys = new List<Transform>(spawnPointCooldowns.Keys);
-        foreach (var spawnPoint in keys)
-        {
-            if (spawnPointCooldowns[spawnPoint] > 0)
+            if (spawnPointCooldowns[point.transform] > 0)
             {
-                spawnPointCooldowns[spawnPoint] -= Time.deltaTime;
+                spawnPointCooldowns[point.transform] -= Time.deltaTime;
             }
         }
+    }
+
+    void SpawnFish()
+    {
+        if (fishPrefab == null || spawnedFish.Count >= maxFish) return;
+
+        CleanUpFishList();
+
+        List<SpawnPoint> availablePoints = new List<SpawnPoint>();
+        foreach (var point in spawnPoints)
+        {
+            if (spawnPointCooldowns[point.transform] <= 0)
+            {
+                availablePoints.Add(point);
+            }
+        }
+
+        if (availablePoints.Count == 0) return;
+
+        SpawnPoint chosenPoint = availablePoints[Random.Range(0, availablePoints.Count)];
+        GameObject newFish = Instantiate(
+            fishPrefab,
+            chosenPoint.transform.position,
+            Quaternion.Euler(chosenPoint.lookDirection)
+        );
+
+        Fish fishComponent = newFish.GetComponent<Fish>();
+        if (fishComponent != null)
+        {
+            fishComponent.spawnPosition = chosenPoint.transform.position;
+            fishComponent.SetSpawner(this); 
+        }
+
+        spawnedFish.Add(newFish);
+        spawnPointCooldowns[chosenPoint.transform] = spawnPointCooldown;
+    }
+
+    public void RemoveFish(GameObject fish)
+    {
+        if (spawnedFish.Contains(fish))
+        {
+            spawnedFish.Remove(fish);
+        }
+    }
+
+    void CleanUpFishList()
+    {
+        spawnedFish.RemoveAll(fish => fish == null);
     }
 
     public void TriggerLoseCondition()
@@ -72,69 +111,25 @@ public class FishSpawner : MonoBehaviour
         nightEnded = true;
         CancelInvoke(nameof(SpawnFish));
 
-        Time.timeScale = 0f;
-
-        if (losePanel != null)
+        foreach (var fish in spawnedFish.ToArray())
         {
-            losePanel.SetActive(true);
+            if (fish != null) Destroy(fish);
         }
+        spawnedFish.Clear();
 
+        Time.timeScale = 0f;
+        if (losePanel != null) losePanel.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-    }
 
-    void SpawnFish()
-    {
-        if (fishPrefab == null)
-        {
-            return;
-        }
-
-        CleanUpFishList();
-
-        if (spawnedFish.Count >= maxFish) return;
-
-        List<Transform> availableSpawnPoints = new List<Transform>();
-        foreach (var spawnPoint in spawnPoints)
-        {
-            if (spawnPointCooldowns[spawnPoint] <= 0)
-            {
-                availableSpawnPoints.Add(spawnPoint);
-            }
-        }
-
-        if (availableSpawnPoints.Count == 0) return;
-
-        Transform randomSpawnPoint = availableSpawnPoints[Random.Range(0, availableSpawnPoints.Count)];
-        GameObject newFish = Instantiate(fishPrefab, randomSpawnPoint.position, randomSpawnPoint.rotation);
-
-        Fish fishComponent = newFish.GetComponent<Fish>();
-        if (fishComponent != null)
-        {
-            fishComponent.spawnPosition = randomSpawnPoint.position;
-        }
-
-        spawnedFish.Add(newFish);
-        spawnPointCooldowns[randomSpawnPoint] = spawnPointCooldown;
-    }
-
-    void CleanUpFishList()
-    {
-        spawnedFish.RemoveAll(fish => fish == null);
     }
 
     void EndNight()
     {
         nightEnded = true;
         CancelInvoke(nameof(SpawnFish));
-
         Time.timeScale = 0f;
-
-        if (winPanel != null)
-        {
-            winPanel.SetActive(true);
-        }
-
+        if (winPanel != null) winPanel.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

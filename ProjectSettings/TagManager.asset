@@ -8,6 +8,7 @@ TagManager:
   - CinemachineTarget
   - Selectable
   - Monster
+  - Fish
   layers:
   - Default
   - TransparentFX
