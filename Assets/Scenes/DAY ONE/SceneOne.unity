@@ -886,7 +886,7 @@ MonoBehaviour:
   Dialogues:
   - {fileID: 38917997}
   DialogueAudioClips:
-  - {fileID: 8300000, guid: cda2a71e6f49d9d4da4749e8358d0180, type: 3}
+  - {fileID: 8300000, guid: a73cda5fe7ab5c043bbf9316a06d99ac, type: 3}
   DisplayTimes:
   - 7
   - 2
@@ -2185,7 +2185,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f25c799bb1386864b8d57759d9649934, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 72b5ee2679360a5419c9246cae072339, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2696,7 +2696,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4e2a15f26db6e28449824bf4f2b004b8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6659,7 +6659,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 81a25e9ada59db7469a9014a92e549ea, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.608
+  m_Volume: 0.16
   m_Pitch: 1
   Loop: 1
   Mute: 0

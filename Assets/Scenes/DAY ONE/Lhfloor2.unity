@@ -852,6 +852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiPanel: {fileID: 1848528591}
+  audioSource: {fileID: 0}
 --- !u!65 &118112707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6210,6 +6211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiPanel: {fileID: 1034546082}
+  audioSource: {fileID: 0}
 --- !u!1 &846559075
 GameObject:
   m_ObjectHideFlags: 0
@@ -6307,6 +6309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chosenText: {fileID: 1034546082}
+  audioSource: {fileID: 0}
 --- !u!65 &895375549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8036,7 +8039,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284689680}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 81a25e9ada59db7469a9014a92e549ea, type: 3}
@@ -8302,6 +8305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chosenText: {fileID: 1848528591}
+  audioSource: {fileID: 0}
 --- !u!65 &1330646868
 BoxCollider:
   m_ObjectHideFlags: 0

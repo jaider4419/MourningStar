@@ -5595,7 +5595,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e15584cec32f35341bac5e2d4835a060, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.262
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8061,9 +8061,9 @@ MonoBehaviour:
   - {fileID: 328224702}
   - {fileID: 2123743076}
   DialogueAudioClips:
-  - {fileID: 8300000, guid: 216de44c07ff1db439376ac96120f95d, type: 3}
+  - {fileID: 8300000, guid: 450a33a369b718343aa8a4884917645e, type: 3}
   - {fileID: 0}
-  - {fileID: 8300000, guid: e88c3b767e3873944b0689d7fc762685, type: 3}
+  - {fileID: 8300000, guid: 86ba9d706fa45404e8bee4f939e79864, type: 3}
   DisplayTimes:
   - 4
   - 2

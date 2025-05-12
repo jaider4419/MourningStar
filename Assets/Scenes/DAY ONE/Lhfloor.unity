@@ -2009,7 +2009,6 @@ GameObject:
   - component: {fileID: 398398281}
   - component: {fileID: 398398280}
   - component: {fileID: 398398279}
-  - component: {fileID: 398398284}
   m_Layer: 0
   m_Name: TRIGGER
   m_TagString: Untagged
@@ -2117,19 +2116,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -2.465, z: 0}
---- !u!114 &398398284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398398278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2972e4dee2c4f0a4991943243622c920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chosenText: {fileID: 228637208}
 --- !u!1 &399166908
 GameObject:
   m_ObjectHideFlags: 0

@@ -897,6 +897,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogues:
   - {fileID: 1977133160}
+  DialogueAudioClips: []
+  DisplayTimes:
+  - 4
+  - 2
+  - 5
+  - 3
+  - 3
 --- !u!4 &166277214
 Transform:
   m_ObjectHideFlags: 0
@@ -1326,6 +1333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiPanel: {fileID: 1353738189}
+  audioSource: {fileID: 0}
 --- !u!1 &290716871
 GameObject:
   m_ObjectHideFlags: 0
