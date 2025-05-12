@@ -10836,8 +10836,11 @@ MonoBehaviour:
   activeScenes:
   - Lhfloor
   - Lhfloor2
+  - LhfloorDay2
+  - Lhfloor2Day2
   pauseScenes:
   - Night
+  - Night2
 --- !u!4 &2078473723
 Transform:
   m_ObjectHideFlags: 0

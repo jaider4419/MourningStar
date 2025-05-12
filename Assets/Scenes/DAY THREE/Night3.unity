@@ -639,7 +639,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e15584cec32f35341bac5e2d4835a060, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.172
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4752,7 +4752,11 @@ MonoBehaviour:
   - {fileID: 1928967394}
   - {fileID: 1703862162}
   - {fileID: 1555770858}
-  DialogueAudioClips: []
+  DialogueAudioClips:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: ac306b935923a4e43be81dff37af9eae, type: 3}
   DisplayTimes:
   - 4
   - 2
@@ -5313,7 +5317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &946580796
 Transform:
   m_ObjectHideFlags: 0
